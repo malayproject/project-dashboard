@@ -3,11 +3,26 @@ import caretDownSvg from "../assets/Icons/Temp_3/caret-down.svg";
 import commentPng from "../assets/Icons/Temp_3/Path 163.png";
 import addPersonSvg from "../assets/Icons/Temp_3/Group 456.svg";
 import arrowsSvg from "../assets/Icons/Temp_3/Group 457.svg";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
 const ProjectCard = (props) => {
-  const { selectedIndex, projectName, index } = props;
+  const { selectedId, projectName, isCollapsed } = props;
+  console.log("item props", props);
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id: props.id });
+  const style = {
+    // transform: CSS.Transform.toString(transform),
+    transition,
+  };
   return (
-    <div className="projectCard">
+    <div
+      className="projectCard"
+      style={style}
+      ref={setNodeRef}
+      //   {...listeners}
+      {...attributes}
+    >
       <div className="projectCardHeader">
         <div className="projectCardHeaderLeft">
           <img src={caretDownSvg} alt="caret-down" width="16" />
@@ -17,11 +32,18 @@ const ProjectCard = (props) => {
           <div className="projectCardHeaderActions">
             <img src={commentPng} alt="comment" width="20" height="14" />
             <img src={addPersonSvg} alt="add person" width="22" height="auto" />
-            <img src={arrowsSvg} alt="arrows" width="16" height="14" />
+            <img
+              src={arrowsSvg}
+              alt="arrows"
+              width="16"
+              height="14"
+              {...listeners}
+              style={{ cursor: "grab" }}
+            />
           </div>
         </div>
       </div>
-      {selectedIndex === index && (
+      {selectedId === props.id && !isCollapsed && (
         <div className="projectCardBody">
           <div className="projectSection">
             <div className="projectSectionHeader">
