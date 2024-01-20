@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Post from "./Post";
 import LineChart from "./LineChart";
+import AddAPost from "./AddAPost";
 
 const CentralPanel = () => {
   const [isApproved, setIsApproved] = useState(false);
@@ -86,6 +87,7 @@ const CentralPanel = () => {
           {posts.map((post, ind) => (
             <Post key={post.id} post={post} />
           ))}
+          <AddAPost />
         </div>
         <div className="actions">
           {!isRejected && (
@@ -115,12 +117,27 @@ const CentralPanel = () => {
           <div className="chartCanvas">
             <LineChart />
           </div>
-          <div className="attendanceReportStats"></div>
+          <div className="attendanceReportStats">
+            <div className="reportStatsHeader">Attendance Report</div>
+            <div className="weeklyStats">
+              <div className="label">Weekly Analysis</div>
+              <div className="value">1 Jan - 31 March</div>
+            </div>
+            <div className="hourlyStats">
+              <div className="label">Hour Details</div>
+              <div className="value">1000 hrs</div>
+            </div>
+            <div className="location">
+              <div className="label">Location</div>
+              <div className="value">Rajaji nagar</div>
+            </div>
+          </div>
         </div>
         <div className="posts">
           {chartPosts.map((post, ind) => (
             <Post key={post.id} post={post} />
           ))}
+          <AddAPost />
         </div>
       </div>
     </div>

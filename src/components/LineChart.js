@@ -44,18 +44,18 @@ const LineChart = () => {
     plugins: {
       scales: {
         y: {
-          title: "Hours Spent",
+          // title: "Hours Spent",
           ticks: {
             // grace: 10,
             suggestedMin: 0,
-            major: { enabled: true },
+            // major: { enabled: true },
           },
-          type: "linear",
-          scaleLabel: {
-            display: true,
-            labelString: "Hours Spent",
-            fontColor: "#475752",
-          },
+          // type: "linear",
+          // scaleLabel: {
+          //   display: true,
+          //   labelString: "Hours Spent",
+          //   fontColor: "#475752",
+          // },
         },
       },
       legend: {
