@@ -29,9 +29,13 @@ const LineChart = () => {
     datasets: [
       {
         label: "Attendance",
-        data: [45, 40, 25, 55, 72, 84, 102, 132, 112, 120],
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        data: [65, 60, 45, 55, 72, 84, 102, 132, 112, 120],
+        borderColor: "#ed2939",
+        backgroundColor: "rgba(255, 100, 132, 0.9)",
+        // pointBackgroundColor: "#fd2323",
+        // pointBorderWidth: "1rem",
+        // pointStyle: "circle",
+        borderWidth: "1",
       },
     ],
   };
@@ -39,20 +43,20 @@ const LineChart = () => {
     responsive: true,
     plugins: {
       scales: {
-        yAxes: [
-          {
-            ticks: {
-              beginAtZero: true,
-              grace: 10,
-            },
-            type: "linear",
-            scaleLabel: {
-              display: true,
-              labelString: "number of cars",
-              fontColor: "#475752",
-            },
+        y: {
+          title: "Hours Spent",
+          ticks: {
+            // grace: 10,
+            suggestedMin: 0,
+            major: { enabled: true },
           },
-        ],
+          type: "linear",
+          scaleLabel: {
+            display: true,
+            labelString: "Hours Spent",
+            fontColor: "#475752",
+          },
+        },
       },
       legend: {
         position: "top",

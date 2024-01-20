@@ -493,7 +493,17 @@
   gap: 1rem;
 }
 
-/* .centralPanel .reportCardBody . */
+.centralPanel .reportCardBody .chartCanvas {
+  flex-basis: 60%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.centralPanel .reportCardBody .attendanceReportStats {
+  flex-basis: 40%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
 
 .rightPanel .rightPanelTabContainer {
   width: 100%;

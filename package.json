@@ -1,6 +1,7 @@
 {
   "name": "project-dashboard",
   "version": "0.1.0",
+  "homepage": "https://malayproject.github.io/project-dashboard",
   "private": true,
   "dependencies": {
     "@dnd-kit/core": "^6.1.0",
