@@ -6,7 +6,12 @@ const MainHeader = () => {
     <div className="mainHeader">
       <div className="userHeaderContainer">
         <div className="userHeader">
-          <img src={fourSquareSvg} alt="" width="20" />
+          <img
+            src={fourSquareSvg}
+            alt=""
+            width="18"
+            style={{ filter: "blur(0.5px)" }}
+          />
           Ashutosh Bhardwaj
         </div>
       </div>
