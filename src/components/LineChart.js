@@ -17,7 +17,7 @@ ChartJS.register(
   PointElement,
   LineElement,
   Title,
-  Tooltip,
+  // Tooltip,
   Legend
 );
 
@@ -28,8 +28,8 @@ const LineChart = () => {
     labels,
     datasets: [
       {
-        label: "Attendance",
-        data: [65, 60, 45, 55, 72, 84, 102, 132, 112, 120],
+        // label: "",
+        data: [65, 70, 75, 65, 78, 84, 96, 112, 108, 111],
         borderColor: "#ed2939",
         backgroundColor: "rgba(255, 100, 132, 0.9)",
         // pointBackgroundColor: "#fd2323",
@@ -42,29 +42,54 @@ const LineChart = () => {
   const options = {
     responsive: true,
     plugins: {
-      scales: {
-        y: {
-          // title: "Hours Spent",
-          ticks: {
-            // grace: 10,
-            suggestedMin: 0,
-            // major: { enabled: true },
+      legend: false,
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        type: "linear",
+        display: true,
+        title: {
+          display: true,
+          text: "Hours Spent",
+          font: { size: 10, color: "#cccccc" },
+        },
+        position: "left",
+        grace: "60%",
+        ticks: {
+          stepSize: 25,
+          color: "#aaa",
+          font: {
+            size: 8,
           },
-          // type: "linear",
-          // scaleLabel: {
-          //   display: true,
-          //   labelString: "Hours Spent",
-          //   fontColor: "#475752",
-          // },
+        },
+        border: {
+          width: 2,
+        },
+        grid: {
+          tickLength: 3,
         },
       },
-      legend: {
-        position: "top",
+      x: {
+        display: true,
+        title: {
+          display: true,
+          text: "Weeks",
+          font: { size: 10, color: "#aaaaaa" },
+        },
+        ticks: {
+          color: "#aaa",
+          font: {
+            size: 8,
+          },
+        },
+        border: {
+          width: 2,
+        },
+        grid: {
+          tickLength: 3,
+        },
       },
-      //   title: {
-      //     display: false,
-      //     text: "Chart.js Line Chart",
-      //   },
     },
   };
 
