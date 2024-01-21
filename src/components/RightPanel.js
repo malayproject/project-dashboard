@@ -40,12 +40,8 @@ const RightPanel = () => {
       coordinateGetter: sortableKeyboardCoordinates,
     })
   );
-  // const { isOver, setNodeRef } = useDroppable({
-  //   id: "droppable",
-  // });
 
   const [activeCardId, setActiveCardId] = useState(null);
-  // const [isCollapsed, setIsCollapsed] = useState(false);
 
   const handleDragOver = (event) => {
     const { active, over } = event;
@@ -62,13 +58,11 @@ const RightPanel = () => {
     const { active, over } = event;
 
     console.log(active, over);
-    // setIsCollapsed(true);
     setActiveCardId(event.active.id);
   };
 
   const handleDragEnd = (event) => {
     setActiveCardId(null);
-    // setIsCollapsed(false);
   };
 
   return (
@@ -93,7 +87,6 @@ const RightPanel = () => {
                 <ProjectCard
                   selectedId={selectedId}
                   setSelectedId={setSelectedId}
-                  // isCollapsed={isCollapsed}
                   index={ind}
                   projectName={projectCard.projectName}
                   key={projectCard.id}
@@ -105,10 +98,8 @@ const RightPanel = () => {
             <DragOverlay adjustScale={false}>
               {activeCardId &&
               projectCards.some((i) => i.id === activeCardId) ? (
-                // <ProjectCard key={active} id={active} />
                 <ProjectCard
                   selectedId={selectedId}
-                  // isCollapsed={isCollapsed}
                   index={projectCards.find((i) => i.id === activeCardId)?.index}
                   projectName={
                     projectCards.find((i) => i.id === activeCardId)?.projectName

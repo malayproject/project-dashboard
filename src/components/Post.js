@@ -12,7 +12,6 @@ const Post = (props) => {
         <img
           src={post?.profileName === "Joe" ? person1Jpg : person2Jpg}
           alt="profile pic"
-          //   width="24"
         />
       </div>
       <div className="postCard">

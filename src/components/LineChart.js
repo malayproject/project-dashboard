@@ -6,7 +6,6 @@ import {
   PointElement,
   LineElement,
   Title,
-  Tooltip,
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
@@ -17,7 +16,6 @@ ChartJS.register(
   PointElement,
   LineElement,
   Title,
-  // Tooltip,
   Legend
 );
 
@@ -28,13 +26,9 @@ const LineChart = () => {
     labels,
     datasets: [
       {
-        // label: "",
         data: [65, 70, 75, 65, 78, 84, 96, 112, 108, 111],
         borderColor: "#ed2939",
         backgroundColor: "rgba(255, 100, 132, 0.9)",
-        // pointBackgroundColor: "#fd2323",
-        // pointBorderWidth: "1rem",
-        // pointStyle: "circle",
         borderWidth: "1",
       },
     ],

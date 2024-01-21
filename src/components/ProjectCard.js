@@ -4,7 +4,6 @@ import commentPng from "../assets/Icons/Temp_3/Path 163.png";
 import addPersonSvg from "../assets/Icons/Temp_3/Group 456.svg";
 import arrowsSvg from "../assets/Icons/Temp_3/Group 457.svg";
 import { useSortable } from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
 
 const ProjectCard = (props) => {
   const { selectedId, setSelectedId, projectName, isCollapsed, activeCardId } =
@@ -13,7 +12,6 @@ const ProjectCard = (props) => {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id: props.id });
   const style = {
-    // transform: CSS.Transform.toString(transform),
     transition,
     visibility: activeCardId === props.id ? "hidden" : "visible",
   };
@@ -23,13 +21,7 @@ const ProjectCard = (props) => {
     else setSelectedId(props.id);
   };
   return (
-    <div
-      className="projectCard"
-      style={style}
-      ref={setNodeRef}
-      //   {...listeners}
-      {...attributes}
-    >
+    <div className="projectCard" style={style} ref={setNodeRef} {...attributes}>
       <div className="projectCardHeader">
         <div className="projectCardHeaderLeft">
           <img
