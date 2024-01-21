@@ -27,7 +27,7 @@ const CentralPanel = () => {
       profilePicUrl: "../assets/Icons/Temp_3/person1.jpg",
       profileName: "Joe",
       postText:
-        "khg kdgkhg ghdlh kldfah. dh gkdfhgkdfhifdhg dfh igh dfgb kfgh sgukssgh kf gjkdfg skgjfkg sgskf gfig ksgsrkjrg",
+        "dfg hi fdhg dfh  dfh ijvdvv g dfgd dfgfk df ijvdvv g dfgd dfgfk dfg dgd  ggfgd dfg hi fdhg dfh  dfh ijvdvv g dfgd dfgfk df ijvdvv g dfgd dfgfk dfg dgd  ggfgdg dg dg dfgfg dfg g gjfkg sgskf gfig ksgsrk kjrg",
       timeStamp: 1704454079230,
     },
   ]);

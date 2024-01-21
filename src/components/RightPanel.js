@@ -19,15 +19,17 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 
+import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
+
 const RightPanel = () => {
-  const [selectedId, setSelectedId] = useState(2);
+  const [selectedId, setSelectedId] = useState(0);
 
   const [projectCards, setProjectCards] = useState([
     { id: 1, projectName: "RMS" },
-    { id: 2, projectName: "RMS" },
-    { id: 3, projectName: "RMS3" },
-    { id: 4, projectName: "RMS4" },
-    { id: 5, projectName: "RMS5" },
+    { id: 2, projectName: "Tattoo" },
+    { id: 3, projectName: "Gradiance Ticketing App" },
+    { id: 4, projectName: "Tattoo" },
+    { id: 5, projectName: "Gradiance Ticketing App" },
   ]);
 
   const sensors = useSensors(
@@ -42,8 +44,8 @@ const RightPanel = () => {
   //   id: "droppable",
   // });
 
-  const [active, setActive] = useState(null);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [activeCardId, setActiveCardId] = useState(null);
+  // const [isCollapsed, setIsCollapsed] = useState(false);
 
   const handleDragOver = (event) => {
     const { active, over } = event;
@@ -60,13 +62,13 @@ const RightPanel = () => {
     const { active, over } = event;
 
     console.log(active, over);
-    setIsCollapsed(true);
-    setActive(event.active.id);
+    // setIsCollapsed(true);
+    setActiveCardId(event.active.id);
   };
 
   const handleDragEnd = (event) => {
-    setActive(null);
-    setIsCollapsed(false);
+    setActiveCardId(null);
+    // setIsCollapsed(false);
   };
 
   return (
@@ -82,33 +84,37 @@ const RightPanel = () => {
           onDragOver={handleDragOver}
           onDragStart={handleDragStart}
           sensors={sensors}
-          collisionDetection={closestCorners}
+          collisionDetection={closestCenter}
+          modifiers={[restrictToVerticalAxis]}
         >
           <div className="projectCards">
             <SortableContext items={projectCards} strategy={() => null}>
               {projectCards.map((projectCard, ind) => (
                 <ProjectCard
                   selectedId={selectedId}
-                  isCollapsed={isCollapsed}
+                  setSelectedId={setSelectedId}
+                  // isCollapsed={isCollapsed}
                   index={ind}
                   projectName={projectCard.projectName}
                   key={projectCard.id}
                   id={projectCard.id}
+                  activeCardId={activeCardId}
                 />
               ))}
             </SortableContext>
             <DragOverlay adjustScale={false}>
-              {active && projectCards.some((i) => i.id === active) ? (
+              {activeCardId &&
+              projectCards.some((i) => i.id === activeCardId) ? (
                 // <ProjectCard key={active} id={active} />
                 <ProjectCard
                   selectedId={selectedId}
-                  isCollapsed={isCollapsed}
-                  index={projectCards.find((i) => i.id === active)?.index}
+                  // isCollapsed={isCollapsed}
+                  index={projectCards.find((i) => i.id === activeCardId)?.index}
                   projectName={
-                    projectCards.find((i) => i.id === active)?.projectName
+                    projectCards.find((i) => i.id === activeCardId)?.projectName
                   }
-                  key={active}
-                  id={active}
+                  key={activeCardId}
+                  id={activeCardId}
                 />
               ) : null}
             </DragOverlay>

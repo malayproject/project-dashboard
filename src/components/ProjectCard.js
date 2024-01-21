@@ -7,13 +7,20 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
 const ProjectCard = (props) => {
-  const { selectedId, projectName, isCollapsed } = props;
+  const { selectedId, setSelectedId, projectName, isCollapsed, activeCardId } =
+    props;
   console.log("item props", props);
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id: props.id });
   const style = {
     // transform: CSS.Transform.toString(transform),
     transition,
+    visibility: activeCardId === props.id ? "hidden" : "visible",
+  };
+
+  const handleCaretClick = () => {
+    if (selectedId === props.id) setSelectedId(-1);
+    else setSelectedId(props.id);
   };
   return (
     <div
@@ -25,7 +32,13 @@ const ProjectCard = (props) => {
     >
       <div className="projectCardHeader">
         <div className="projectCardHeaderLeft">
-          <img src={caretDownSvg} alt="caret-down" width="16" />
+          <img
+            src={caretDownSvg}
+            alt="caret-down"
+            width="16"
+            onClick={handleCaretClick}
+            style={{ cursor: "pointer" }}
+          />
         </div>
         <div className="projectCardHeaderRight">
           <div className="projectCardTitle">{projectName}</div>
