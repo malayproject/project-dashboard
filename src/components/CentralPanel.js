@@ -27,7 +27,7 @@ const CentralPanel = () => {
       profilePicUrl: "../assets/Icons/Temp_3/person1.jpg",
       profileName: "Joe",
       postText:
-        "dfg hi fdhg dfh  dfh ijvdvv g dfgd dfgfk df ijvdvv g dfgd dfgfk dfg dgd  ggfgd dfg hi fdhg dfh  dfh ijvdvv g dfgd dfgfk df ijvdvv g dfgd dfgfk dfg dgd  ggfgdg dg dg dfgfg dfg g gjfkg sgskf gfig ksgsrk kjrg",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, cumque.",
       timeStamp: 1704454079230,
     },
   ]);
@@ -45,7 +45,7 @@ const CentralPanel = () => {
       id: 1,
       profilePicUrl: "../assets/Icons/Temp_3/person2.jpg",
       profileName: "Michael",
-      postText: "ish ig hifdfhgidfgh ieg iegh idgh",
+      postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       timeStamp: 1705684015330,
     },
   ]);

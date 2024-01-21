@@ -30,6 +30,7 @@ const LineChart = () => {
         borderColor: "#ed2939",
         backgroundColor: "rgba(255, 100, 132, 0.9)",
         borderWidth: "1",
+        radius: 3,
       },
     ],
   };
