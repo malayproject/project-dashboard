@@ -27,7 +27,7 @@ const CentralPanel = () => {
       profilePicUrl: "../assets/Icons/Temp_3/person1.jpg",
       profileName: "Joe",
       postText:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, cumque.",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam cupiditate ex cum veritatis voluptatum repellendus. Delectus unde quod explicabo ea provident autem, adipisci odio sed labore culpa ab repudiandae? Culpa rem quaerat id, earum neque adipisci consequuntur obcaecati? Incidunt, nisi.",
       timeStamp: 1704454079230,
     },
   ]);
@@ -45,7 +45,8 @@ const CentralPanel = () => {
       id: 1,
       profilePicUrl: "../assets/Icons/Temp_3/person2.jpg",
       profileName: "Michael",
-      postText: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      postText:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem",
       timeStamp: 1705684015330,
     },
   ]);
